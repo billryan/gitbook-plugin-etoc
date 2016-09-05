@@ -5,10 +5,10 @@ module.exports = {
     book: {
       assets: './assets',
       css: [
-        "atoc.css"
+        "plugin.css"
       ],
       js: [
-        "atoc.js"
+        "plugin.js"
       ]
     },
     hooks: {

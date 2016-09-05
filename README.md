@@ -1,6 +1,6 @@
 # gitbook-plugin-etoc
 
-[![npm](https://img.shields.io/npm/v/gitbook-plugin-etoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etoc) [![npm](https://img.shields.io/npm/dm/gitbook-plugin-etoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etec) [![npm](https://img.shields.io/npm/dt/gitbook-plugin-atoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etoc)
+[![npm](https://img.shields.io/npm/v/gitbook-plugin-etoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etoc) [![npm](https://img.shields.io/npm/dm/gitbook-plugin-etoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etec) [![npm](https://img.shields.io/npm/dt/gitbook-plugin-etoc.svg?style=plastic)](https://npmjs.org/package/gitbook-plugin-etoc)
 
 This plugin will add table of content to the page and provide navigation function inside a page.
 
@@ -10,7 +10,7 @@ When you build the book, it will insert a table of content automatically or to p
 
 ```
 {
-	"plugine": ["atoc"],
+	"plugin": ["etoc"],
 	"pluginsConfig": {
 		"etoc": {
 			"addClass": true
