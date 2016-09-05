@@ -1,0 +1,53 @@
+#toc .tocUl {
+	padding-left: 2em;
+}
+
+#toc.tocFloat {
+	float: left;
+	margin: 0 2em 1em 0;
+	width: 20em;
+}
+
+.toggleSymbol {
+	color: #0000ff;
+	cursor: pointer;
+}
+
+.toggleNode {
+	position: absolute;
+	top: 0;
+	left: -2em;
+}
+
+.noFloat #toc.tocFloat {
+	float: none;
+	margin: 0;
+	width: auto;
+}
+
+/* toc-floated CSS */
+#toc.tocFloat {
+	float: left;
+	margin: 0 2em 1em 0;
+	max-width: 20em;
+}
+
+.noFloat #toc.tocFloat {
+	float: none;
+	margin: 0;
+	max-width: auto;
+}
+
+@media print {
+	#toc.tocFloat {
+		background: #ffffff;
+	}
+
+	.toggleNode {
+		display: none;
+	}
+
+	#toc .tocUl {
+		padding-left: 0;
+	}
+}

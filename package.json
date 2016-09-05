@@ -1,0 +1,28 @@
+{
+  "name": "gitbook-plugin-etoc",
+  "description": "Elatant table of content for GitBook",
+  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": "*"
+  },
+  "homepage": "https://github.com/billryan/gitbook-plugin-etoc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billryan/gitbook-plugin-etoc.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billryan/gitbook-plugin-etoc/issues"
+  },
+  "dependencies": {
+    "markdown-toc": "^0.12.16",
+    "github-slugid": "^1.0.1"
+  },
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "toc"
+  ],
+  "author": "Bill Ryan <yuanbin2014@gmail.com>"
+}
