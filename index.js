@@ -19,9 +19,19 @@ module.exports = {
       if (_notoc && (!_existstoc)) return page;
       if (!(_notoc || _existstoc)) {
         // insert <!-- toc --> before the first h2/h3/h4 element
-        page.content = page.content.replace(/(\r|\n|\r\n)(##)/, eol + '<!-- toc -->' + eol + '##');
+        page.content = page.content.replace(/(\r|\n|\r\n)##/, eol + '<!-- toc -->' + eol + '##');
       }
-      var _maxdepth = this.config.get('pluginsConfig.etoc.maxdepth') || 3;
+
+      var _mindepth = this.config.get('pluginsConfig.etoc.mindepth') || 3;
+      var _maxdepth = this.config.get('pluginsConfig.etoc.maxdepth') || 4;
+      if (_mindepth > _maxdepth) {
+        console.error("!!!mindepth should be no more than maxdepth");
+        return page;
+      }
+      var heading = '#'.repeat(_mindepth);
+      var re = new RegExp("(\r|\n|\r\n)" + heading);
+      if (!page.content.match(re)) return page;
+
       page.content = toc.insert(page.content, {
         slugify: function (str) {
           return slug(str);
