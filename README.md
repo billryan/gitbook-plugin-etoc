@@ -29,6 +29,28 @@ You can also config some parameter such as:
 }
 ```
 
+```
+"gitbook": {
+		"properties": {
+				"mindepth": {
+						"type": "number",
+						"description": "minimal heading level required to generate toc",
+						"default": 3
+				},
+				"maxdepth": {
+						"type": "number",
+						"description": "maximal heading level to generate toc",
+						"default": 4
+				},
+				"notoc": {
+						"type": "boolean",
+						"description": "whether to generate toc automatically",
+						"default": false
+				}
+		}
+}
+```
+
 ## LICENSE
 
 MIT
