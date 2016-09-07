@@ -1,5 +1,6 @@
 var toc = require('markdown-toc');
 var slug = require('github-slugid');
+var eol = require('os').EOL;
 
 module.exports = {
   book: {
@@ -13,6 +14,13 @@ module.exports = {
   },
   hooks: {
     "page:before": function (page) {
+      var _notoc = this.config.get('pluginsConfig.etoc.notoc') || false;
+      var _existstoc = page.content.indexOf('<!-- toc -->') !== -1;
+      if (_notoc && (!_existstoc)) return page;
+      if (!(_notoc || _existstoc)) {
+        // insert <!-- toc --> before the first h2/h3/h4 element
+        page.content = page.content.replace(eol + '##', eol + '<!-- toc -->' + eol + '##');
+      }
       var _maxdepth = this.config.get('pluginsConfig.etoc.maxdepth') || 3;
       page.content = toc.insert(page.content, {
         slugify: function (str) {
