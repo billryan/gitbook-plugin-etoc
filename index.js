@@ -39,10 +39,6 @@ module.exports = {
         append: '\n---\n',
         maxdepth: _maxdepth
       });
-      if (this.config.get('pluginsConfig.etoc.addClass')) {
-        var className = this.config.get('pluginsConfig.etoc.className') || 'etoc';
-        page.content = page.content + '\n\n\n<script type="text/javascript">var className=\'' + className + '\';</script>';
-      }
       return page;
     },
 
