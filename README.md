@@ -5,6 +5,12 @@
 This plugin will add table of content to the page.
 When you build the book, it will insert a table of content automatically or to place where you insert `<!-- toc -->`
 
+## Sample
+
+![screenshot 2016-09-07 23 00 26](https://cloud.githubusercontent.com/assets/1292567/18316915/f26e401c-754e-11e6-9a63-ec3763e4e385.png)
+
+## Config
+
 `book.json` Config:
 
 ```
