@@ -36,7 +36,6 @@ module.exports = {
         slugify: function (str) {
           return slug(str);
         },
-        append: '\n---\n',
         maxdepth: _maxdepth
       });
       return page;

@@ -1,53 +1,12 @@
-#toc .tocUl {
-	padding-left: 2em;
+#toc, .toc {
+  background-color: #f9faff;
+  border: 1px solid #d7dfe3;
+  padding: 7px;
+  display: table;
+  font-size: 95%;
+  line-height: 1.6em;
 }
 
-#toc.tocFloat {
-	float: left;
-	margin: 0 2em 1em 0;
-	width: 20em;
-}
-
-.toggleSymbol {
-	color: #0000ff;
-	cursor: pointer;
-}
-
-.toggleNode {
-	position: absolute;
-	top: 0;
-	left: -2em;
-}
-
-.noFloat #toc.tocFloat {
-	float: none;
-	margin: 0;
-	width: auto;
-}
-
-/* toc-floated CSS */
-#toc.tocFloat {
-	float: left;
-	margin: 0 2em 1em 0;
-	max-width: 20em;
-}
-
-.noFloat #toc.tocFloat {
-	float: none;
-	margin: 0;
-	max-width: auto;
-}
-
-@media print {
-	#toc.tocFloat {
-		background: #ffffff;
-	}
-
-	.toggleNode {
-		display: none;
-	}
-
-	#toc .tocUl {
-		padding-left: 0;
-	}
+.toc ul, .toc p {
+  margin-bottom: 0;
 }
