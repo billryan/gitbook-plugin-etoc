@@ -16,6 +16,8 @@ module.exports = {
     "page:before": function (page) {
       var _notoc = this.config.get('pluginsConfig.etoc.notoc') || false;
       var _existstoc = page.content.indexOf('<!-- toc -->') !== -1;
+      var _existsnotoc = page.content.indexOf('<!-- notoc -->') !== -1;
+      if (_existsnotoc) return page;
       if (_notoc && (!_existstoc)) return page;
       if (!(_notoc || _existstoc)) {
         // insert <!-- toc --> before the first h2/h3/h4 element
