@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-etoc",
   "description": "Elegant table of content for GitBook",
   "main": "index.js",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engines": {
     "gitbook": "*"
   },
@@ -20,23 +20,23 @@
     "github-slugid": "^1.0.1"
   },
   "gitbook": {
-      "properties": {
-          "mindepth": {
-              "type": "number",
-              "description": "minimal heading level required to generate toc",
-              "default": 3
-          },
-          "maxdepth": {
-              "type": "number",
-              "description": "maximal heading level to generate toc",
-              "default": 4
-          },
-          "notoc": {
-              "type": "boolean",
-              "description": "whether to generate toc automatically",
-              "default": false
-          }
+    "properties": {
+      "mindepth": {
+        "type": "number",
+        "description": "minimal heading level required to generate toc",
+        "default": 3
+      },
+      "maxdepth": {
+        "type": "number",
+        "description": "maximal heading level to generate toc",
+        "default": 4
+      },
+      "notoc": {
+        "type": "boolean",
+        "description": "whether to generate toc automatically",
+        "default": false
       }
+    }
   },
   "keywords": [
     "gitbook",
