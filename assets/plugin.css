@@ -10,3 +10,30 @@
 .toc ul, .toc p {
   margin-bottom: 0;
 }
+
+.toc ul {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+.toc ul > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.toc ul > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+.toc li ul > li {
+  margin: 0;
+}
+
+li ul > li:before {
+  content: counters(item, ".") " ";
+}
