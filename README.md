@@ -5,13 +5,15 @@
 This plugin will add table of content to the page automatically.
 When you build the book, it will insert a table of content automatically or to place where you insert `<!-- toc -->`. Sometimes you may want to disable toc on some page, just add `<!-- notoc -->` on the the markdown page.
 
+Demo site ==> https://yuanbin.gitbooks.io/test/content/
+
 ## Sample
 
-![screenshot 2016-09-07 23 00 26](https://cloud.githubusercontent.com/assets/1292567/18316915/f26e401c-754e-11e6-9a63-ec3763e4e385.png)
+![screenshot 2016-09-13 23 21 36](https://cloud.githubusercontent.com/assets/1292567/18479788/e05bf126-7a08-11e6-83b4-0322d20fcd94.png)
 
 ## Config
 
-Add `etoc` in `book.json`.
+Add `etoc` in `book.json` is enough for most users.
 
 ```
 {
