@@ -38,6 +38,6 @@
   margin: 0;
 }
 
-li ul > li:before {
+.toc li ul > li:before {
   content: counters(item, ".") " ";
 }
