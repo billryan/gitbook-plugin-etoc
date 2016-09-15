@@ -1,6 +1,6 @@
 #toc, .toc {
-  background-color: #f9faff;
-  border: 1px solid #d7dfe3;
+  background-color: #fcfcfc;
+  border-radius: 4px;
   padding: 7px;
   display: table;
   font-size: 95%;
@@ -16,6 +16,10 @@
   counter-reset: item;
   margin: 0;
   padding: 0;
+}
+
+.toc > ul {
+  padding: 0px 8px;
 }
 
 .toc ul > li {
