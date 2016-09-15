@@ -21,7 +21,7 @@ module.exports = {
       if (_notoc && (!_existstoc)) return page;
       if (!(_notoc || _existstoc)) {
         // insert <!-- toc --> before the first h2/h3/h4 element
-        page.content = page.content.replace(/[\r|\n|\r\n]##/, eol + '<!-- toc -->' + eol + '##');
+        page.content = page.content.replace(/[\r\n]##/, eol + '<!-- toc -->' + eol + '##');
       }
 
       var _mindepth = this.config.get('pluginsConfig.etoc.mindepth') || 3;
