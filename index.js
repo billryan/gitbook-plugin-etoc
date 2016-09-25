@@ -33,13 +33,10 @@ module.exports = {
       var re = new RegExp('^#{' + _mindepth + '}[^#]', 'm');
       if (!re.test(page.content)) return page;
 
-      // markdown-toc do not pass options to generate func,
+      // markdown-toc do not pass options to generate,
       // we should escape <!-- toc --> not beginning with whitespace
       page.content = page.content.replace(/^(\S.*)<!-- toc -->(.*)$/m, '$1<!-- rawtoc -->$2');
-      // we do not process <!-- tocstop -->
-      var options = {};
-      options.regex = /^\s*(?:<!-- toc -->)\s*$/im;
-      page.content = toc.insert(page.content, options, {
+      page.content = toc.insert(page.content, {
         slugify: function (str) {
           return slug(str);
         },
