@@ -14,6 +14,7 @@ module.exports = {
   },
   hooks: {
     "page:before": function (page) {
+      if (this.output.name != 'website') return page;
       var _notoc = this.config.get('pluginsConfig.etoc.notoc') || false;
       var _existstoc = /^\s*<!-- toc -->\s*$/im.test(page.content);
       var _existsnotoc = /^\s*<!-- notoc -->\s*$/im.test(page.content);
