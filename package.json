@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-etoc",
   "description": "Elegant table of content for GitBook",
   "main": "index.js",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "engines": {
     "gitbook": "*"
   },
