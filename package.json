@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-etoc",
   "description": "Elegant table of content for GitBook",
   "main": "index.js",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "engines": {
     "gitbook": "*"
   },
@@ -30,6 +30,11 @@
         "type": "number",
         "description": "maximal heading level to generate toc",
         "default": 4
+      },
+      "header": {
+        "type": "number",
+        "description": "insert TOC after header",
+        "default": 1
       },
       "notoc": {
         "type": "boolean",
