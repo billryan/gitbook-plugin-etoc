@@ -30,9 +30,11 @@ module.exports = {
       var re = new RegExp('^#{' + _mindepth + '}[^#]', 'm');
       if (!re.test(page.content)) return page;
 
+      var _header = this.config.get('pluginsConfig.etoc.header') || 1;
+      var headerReg = new RegExp('(^#{' + _header + '}[^#].*)', 'm');
       if (!(_notoc || _existstoc)) {
-        // insert <!-- toc --> before the first h2 element
-        page.content = page.content.replace(/^##([^#])/m, eol + '<!-- toc -->' + eol + '##' + '$1');
+        // insert <!-- toc --> after the header _header element
+        page.content = page.content.replace(headerReg, '$1' + eol + '<!-- toc -->' + eol);
       }
 
       // markdown-toc do not pass options to generate,
