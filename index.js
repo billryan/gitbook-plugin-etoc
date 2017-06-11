@@ -20,15 +20,17 @@ module.exports = {
       var _existsnotoc = /^\s*<!-- notoc -->\s*$/im.test(page.content);
       if (_existsnotoc) return page;
       if (_notoc && (!_existstoc)) return page;
+      var _h2lb = this.config.get('pluginsConfig.etoc.h2lb') || 3;
 
       var _mindepth = this.config.get('pluginsConfig.etoc.mindepth') || 3;
       var _maxdepth = this.config.get('pluginsConfig.etoc.maxdepth') || 4;
       if (_mindepth > _maxdepth) {
-        console.error("!!!mindepth should be no more than maxdepth");
+        console.error("!!!mindepth should be less equal than than maxdepth");
         return page;
       }
       var re = new RegExp('^#{' + _mindepth + '}[^#]', 'm');
-      if (!re.test(page.content)) return page;
+      var _h2num = (page.content.match(/^##[^#]/gm) || []).length;
+      if (!(re.test(page.content) || (_h2num >= _h2lb))) return page;
 
       var _header = this.config.get('pluginsConfig.etoc.header') || 1;
       var headerReg = new RegExp('(^#{' + _header + '}[^#].*)', 'm');
@@ -37,7 +39,7 @@ module.exports = {
         page.content = page.content.replace(headerReg, '$1' + eol + '<!-- toc -->' + eol);
       }
 
-      // markdown-toc do not pass options to generate,
+      // markdown-toc does not pass options to generate,
       // we should escape <!-- toc --> not beginning with whitespace
       page.content = page.content.replace(/^(\S.*)<!-- toc -->(.*)$/m, '$1<!-- rawtoc -->$2');
       page.content = toc.insert(page.content, {

@@ -21,7 +21,12 @@ Add `etoc` in `book.json` is enough for most users.
 }
 ```
 
-It will add toc automatically if the markdown page has `###` header3(mindepth required to generate toc), and the maxdepth of toc is `####` header4 by default. You can also change the default parameter such as:
+It will add toc automatically if the markdown page meets following requirements.
+
+- `###` header3 - `mindepth` required to generate toc
+- `##` number of header2 greater or equal than lower bound(3 by default, controled by `h2lb`)
+
+The maxdepth of toc is `####` header4 by default. You can also change the default parameter such as:
 ```
 {
   "plugins": [
@@ -29,6 +34,7 @@ It will add toc automatically if the markdown page has `###` header3(mindepth re
   ],
   "pluginsConfig": {
     "etoc": {
+      "h2lb": 3,
       "mindepth": 3,
       "maxdepth": 4,
       "notoc": false
@@ -37,28 +43,7 @@ It will add toc automatically if the markdown page has `###` header3(mindepth re
 }
 ```
 
-The configuration json schema is shown as following:
-```
-"gitbook": {
-    "properties": {
-        "mindepth": {
-          "type": "number",
-          "description": "minimal heading level required to generate toc",
-          "default": 3
-        },
-        "maxdepth": {
-          "type": "number",
-          "description": "maximal heading level to generate toc",
-          "default": 4
-        },
-        "notoc": {
-          "type": "boolean",
-          "description": "whether to generate toc automatically",
-          "default": false
-        }
-    }
-}
-```
+The configuration json schema can be found in [gitbook-plugin-etoc/package.json](https://github.com/billryan/gitbook-plugin-etoc/blob/master/package.json)
 
 ## LICENSE
 
