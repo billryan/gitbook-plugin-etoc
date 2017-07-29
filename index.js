@@ -44,11 +44,21 @@ module.exports = {
       page.content = page.content.replace(/^(\S.*)<!-- toc -->(.*)$/m, '$1<!-- rawtoc -->$2');
       page.content = toc.insert(page.content, {
         slugify: function (str) {
-          return slug(str);
+          // handle '{#foo-bar}' syntax (urls)
+          var m = str.match(/\{#([^\}]+)\}\s*$/);
+          return m ? m[1].trim() : slug(str);
         },
         maxdepth: _maxdepth
       });
       page.content = page.content.replace('<!-- rawtoc -->', '<!-- toc -->');
+
+      // handle '{#foo-bar}' syntax (names)
+      var parts = page.content.split('<!-- tocstop -->');
+      parts[0] = parts[0].replace(
+        /\[([^\]\{]+)\{#([^\}]+)\}\]\(#([^\)]+)\)/g,
+        function(a, b, c, d) { return c != d ? a : ('[' + b.trim() + '](#' + c + ')'); });
+      page.content = parts.join('<!-- tocstop -->');
+
       return page;
     },
 
